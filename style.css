@@ -1,34 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
 
 :root { --accent: #00f2ff; --bg: #050505; }
 
-body { background: var(--bg); color: white; font-family: 'Plus Jakarta Sans', sans-serif; margin:0; }
+body { background: var(--bg); color: white; font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; }
 
-#canvas-container { position: fixed; top: 0; z-index: -1; width: 100%; height: 100vh; opacity: 0.5; }
+#canvas-container { position: fixed; top: 0; left: 0; z-index: -1; width: 100%; height: 100vh; opacity: 0.4; pointer-events: none; }
 
-.neon-text { color: var(--accent); text-shadow: 0 0 15px rgba(0, 242, 255, 0.5); }
+.neon-text { color: var(--accent); text-shadow: 0 0 15px rgba(0, 242, 255, 0.4); }
 
 .glass {
     background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: 0.3s ease;
-    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    color: white;
 }
 
-.glass:hover { border-color: var(--accent); transform: translateY(-10px); }
+.glass:hover { border-color: var(--accent); transform: translateY(-8px); background: rgba(255, 255, 255, 0.06); }
 
 .btn-primary {
     background: var(--accent);
-    color: black;
+    color: #000;
     font-weight: 800;
-    padding: 1rem 2rem;
-    border-radius: 12px;
+    padding: 1.2rem 2.5rem;
+    border-radius: 16px;
     text-transform: uppercase;
+    transition: 0.3s;
 }
+
+.btn-primary:hover { transform: scale(1.05); filter: brightness(1.1); }
 
 .whatsapp-btn {
     position: fixed; bottom: 30px; right: 30px; background: #25d366;
     width: 60px; height: 60px; border-radius: 50%; display: flex;
-    align-items: center; justify-content: center; font-size: 30px;
+    align-items: center; justify-content: center; font-size: 30px; z-index: 100;
+}
+
+.reveal { animation: fadeInUp 1s ease-out; }
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
