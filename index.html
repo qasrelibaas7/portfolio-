@@ -3,54 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Umer Takildar | Premium Portfolio</title>
+    <title>Umer Takildar | High-Performance Developer</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="background-blobs"></div>
-    
-    <div class="container">
-        <div class="glass-card profile-section">
-            <div class="profile-img">UT</div>
-            <h1>Umer Takildar</h1>
-            <p class="tagline">Web Developer | Building High Performance Websites</p>
-            
-            <div class="stats-grid">
-                <div class="stat-item"><span>1st Year</span><br>Student</div>
-                <div class="stat-item"><span>6+</span><br>Projects</div>
-                <div class="stat-item"><span style="color:#ffcc00">★ 4.9</span><br>Rating</div>
+    <div id="canvas-container"></div>
+
+    <section class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
+        <div class="reveal">
+            <h2 class="text-xs uppercase tracking-[0.5em] mb-4 opacity-70">Premium Digital Experiences</h2>
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-6 tracking-tight">
+                Umer <span class="neon-text">Takildar</span>
+            </h1>
+            <button onclick="processPayment(20, 'Consultation')" class="btn-primary">
+                Pay ₹20 & Book Call 🤙🏻
+            </button>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 max-w-6xl mx-auto">
+        <h3 class="text-4xl font-bold text-center mb-16">Premium <span class="neon-text">Services</span></h3>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="glass p-8 rounded-3xl" onclick="processPayment(200, '3D Website')">
+                <i class="fa-solid fa-cube text-4xl mb-6 text-cyan-400"></i>
+                <h4 class="text-xl font-bold">3D Website</h4>
+                <p class="text-2xl font-black neon-text mt-4">₹200</p>
+            </div>
+            <div class="glass p-8 rounded-3xl" onclick="processPayment(200, 'E-commerce')">
+                <i class="fa-solid fa-bag-shopping text-4xl mb-6 text-cyan-400"></i>
+                <h4 class="text-xl font-bold">E-com Store</h4>
+                <p class="text-2xl font-black neon-text mt-4">₹200</p>
+            </div>
+            <div class="glass p-8 rounded-3xl" onclick="processPayment(100, 'Simple Brand')">
+                <i class="fa-solid fa-bolt text-4xl mb-6 text-cyan-400"></i>
+                <h4 class="text-xl font-bold">Simple Brand</h4>
+                <p class="text-2xl font-black neon-text mt-4">₹100</p>
+            </div>
+            <div class="glass p-8 rounded-3xl" onclick="processPayment(50, 'Invitation')">
+                <i class="fa-solid fa-pen-nib text-4xl mb-6 text-cyan-400"></i>
+                <h4 class="text-xl font-bold">Invitation</h4>
+                <p class="text-2xl font-black neon-text mt-4">₹50</p>
             </div>
         </div>
+    </section>
 
-        <h2 class="section-title">Premium Services</h2>
-        <div class="services-list">
-            <div class="glass-card service-item" onclick="startPayment(200, '3D Website')">
-                <span><i class="fas fa-cube"></i> 3D Website</span>
-                <span class="price">₹200</span>
-            </div>
-            <div class="glass-card service-item" onclick="startPayment(200, 'E-commerce')">
-                <span><i class="fas fa-shopping-cart"></i> E-commerce Store</span>
-                <span class="price">₹200</span>
-            </div>
-            <div class="glass-card service-item" onclick="startPayment(100, 'Simple Brand')">
-                <span><i class="fas fa-globe"></i> Simple Brand</span>
-                <span class="price">₹100</span>
-            </div>
-        </div>
-
-        <div class="glass-card booking-section">
-            <h3>Book a Strategy Call 🤙🏻</h3>
-            <p>24/7 For Premium Members</p>
-            <button class="pay-btn" onclick="startPayment(20, '10 Min Call')">10 Min Call (₹20)</button>
-        </div>
-    </div>
-
-    <a href="https://wa.me/917385009275" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <a href="https://wa.me/917385009275" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
     <script src="script.js"></script>
 </body>
 </html>
